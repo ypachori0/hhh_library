@@ -1,0 +1,42 @@
+# ------------------------
+# Python-related
+# ------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.sqlite3
+
+# Environment files
+.env
+*.env
+
+# Google Sheets credentials
+backend/credentials/
+
+# ------------------------
+# Node/React-related
+# ------------------------
+node_modules/
+dist/
+frontend/.local/
+frontend/.DS_Store
+
+# ------------------------
+# Docker volumes
+# ------------------------
+dbdata/
+
+# ------------------------
+# IDE and OS files
+# ------------------------
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+Thumbs.db

@@ -1,0 +1,28 @@
+# Ensure consistent LF line endings across platforms
+* text=auto eol=lf
+
+# Treat shell scripts and Docker files as LF always
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# Python and config files
+*.py text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.env text eol=lf
+
+# Ignore binary files for line-ending normalization
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.svg binary
+*.ico binary
+*.pdf binary
+
+# Node modules and lockfiles (don't normalize)
+package-lock.json -text
+yarn.lock -text
+pnpm-lock.yaml -text

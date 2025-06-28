@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: library-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_APP=backend/app.py
+      - FLASK_RUN_PORT=8000
+      - SQLALCHEMY_DATABASE_URI=mysql+pymysql://root:yash1234@db/hhh_library
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: library-frontend
+    ports:
+      - "3000:80"  # Nginx serves on port 80 inside the container
+
+  db:
+    image: mysql:8.0
+    container_name: library-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: yash1234
+      MYSQL_DATABASE: hhh_library
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:
