@@ -12,12 +12,14 @@ services:
       - SQLALCHEMY_DATABASE_URI=mysql+pymysql://root:yash1234@db/hhh_library
     depends_on:
       - db
+    restart: always
 
   frontend:
     build: ./frontend
     container_name: library-frontend
     ports:
       - "3000:80"  # Nginx serves on port 80 inside the container
+    restart: always
 
   db:
     image: mysql:8.0
@@ -29,6 +31,7 @@ services:
       MYSQL_DATABASE: hhh_library
     volumes:
       - dbdata:/var/lib/mysql
+    restart: always
 
 volumes:
   dbdata:
