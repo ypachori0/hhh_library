@@ -12,6 +12,8 @@ services:
       - SQLALCHEMY_DATABASE_URI=mysql+pymysql://root:yash1234@db/hhh_library
     depends_on:
       - db
+    volumes:
+      - ./backend/credentials:/app/credentials:ro
     restart: always
 
   frontend:
