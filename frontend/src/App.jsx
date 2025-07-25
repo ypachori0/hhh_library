@@ -17,7 +17,7 @@ function App() {
     setError('');
     setStatus('');
     try {
-      const res = await fetch('http://localhost:8000/patrons/identify', {
+      const res = await fetch('http://40.78.124.196:8000/patrons/identify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone })
@@ -39,7 +39,7 @@ function App() {
   // function for /patrons/create route
   const handleRegister = async () => {
   try {
-    const res = await fetch('http://localhost:8000/patrons/create', {
+    const res = await fetch('http://40.78.124.196:8000/patrons/create', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, phone, email })
@@ -67,7 +67,7 @@ function App() {
       return;
     }
     try {
-      const res = await fetch(`http://localhost:8000/books/${barcode}/toggle`, {
+      const res = await fetch(`http://40.78.124.196:8000/books/${barcode}/toggle`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action, patron_id: patronId })
